@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '40px',
     borderRadius: 20,
     '&:hover': {
-      backgroundColor: '#C08F24',
+      backgroundColor: '#8E7B5D',
     },
   },
   descripHero: {

@@ -46,11 +46,11 @@ const Footer = () =>{
         <Box className={classes.footer}>
             <Container>
             <Grid container spacing={1}>
-        <Grid item xs={4}>
+        <Grid item xs={12} md={4}>
          <Box className={classes.columnsFooter}> <Typography className={classes.titleColumn}>About us</Typography> </Box>
          <Box className={classes.contactTitle}><Typography className={classes.paragraphAboutus}>We are a company that performs all kinds of fence work</Typography></Box>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} md={4} >
             <Box className={classes.columnsFooter}>
                 <Typography className={classes.titleColumn}>Social Media</Typography>
                 <Typography className={classes.contactTitle}> <img src="images/instagramLogo.svg" height="40px" alt="logo_ig"  className={classes.imgSocialMedia}/> <Box>mannysfence</Box>
@@ -60,7 +60,7 @@ const Footer = () =>{
 
             </Box>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} md={4}>
          <Box className={classes.columnsFooter}>
              <Typography className={classes.titleColumn}>Contact us</Typography>
              
