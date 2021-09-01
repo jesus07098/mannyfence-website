@@ -22,7 +22,7 @@ import {
 
 const useStyles = makeStyles((theme) => ({
   hero: {
-    backgroundImage: 'url(images/hero.jpeg)',
+    backgroundImage: 'url(images/hero.png)',
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
@@ -38,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '100px',
     textAlign: 'center',
     fontWeight: 'bold',
+ 
   },
   buttonHero: {
     backgroundColor: '#EBBF5F00',
@@ -47,13 +48,17 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '40px',
     borderRadius: 20,
     '&:hover': {
-      backgroundColor: '#8E7B5D',
+      backgroundColor: '#B39A68',
     },
   },
   descripHero: {
     fontSize: '32px',
     fontWeight: 700,
     textAlign: 'center',
+  },
+  backgroundHero: {
+    background: '#e2b877',
+
   },
   cardPictures: {
     height: 750,
@@ -94,8 +99,8 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
+     
       <Navbar />
-
       {/* 1st Section: Main Cover */}
       <Box className={classes.hero}>
         <Grid container spacing={2}>
@@ -106,9 +111,7 @@ function App() {
             <Typography className={classes.descripHero}>
               Protect your homes and businesses with our fences
             </Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <Box display="flex" justifyContent="center">
+            <Box display="flex" justifyContent="center" mt={2}>
               <Button
                 variant="outlined"
                 className={classes.buttonHero}
@@ -117,6 +120,7 @@ function App() {
                 Contact Us
               </Button>
             </Box>
+      
           </Grid>
         </Grid>
       </Box>
@@ -138,7 +142,7 @@ function App() {
                     title="Wood Fence"
                   />
                   <CardContent>
-                    <Box fontWeight={800} fontSize={24}>
+                    <Box fontWeight={800} fontSize={24} fontFamily="Noto Sans JP">
                       Wood Fence
                     </Box>
                   </CardContent>
@@ -168,18 +172,18 @@ function App() {
             </Dialog>
 
             <Grid item xs={6}>
-              <Card onClick={handleClickOpen}>
+              <Card className={classes.cardRoot} onClick={handleClickOpen}>
                 <CardActionArea>
                   <CardMedia
                     component="img"
-                    alt="Iron Fence"
+                    alt="Wood Fence"
                     height="450"
-                    image="images/ironfence.jpeg"
+                    image="images/ironfence.jpeg" 
                     title="Iron Fence"
                   />
                   <CardContent>
-                    <Box fontWeight={800} fontSize={24}>
-                      Iron Fence
+                    <Box fontWeight={800} fontSize={24} fontFamily="Noto Sans JP">
+                      Aluminum and Iron Fence
                     </Box>
                   </CardContent>
                 </CardActionArea>
@@ -191,6 +195,7 @@ function App() {
 
       {/*Footer */}
       <Footer />
+ 
     </ThemeProvider>
   );
 }

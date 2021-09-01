@@ -7,7 +7,13 @@ const theme = createMuiTheme({
     },
   },
   typography: {
-    fontFamily: ['"Roboto"', '"Segoe UI Emoji"', '"Helvetica Neue"'].join(','),
+    fontFamily: [
+      '"Noto Sans JP"',
+      '"Helvetica Neue"',
+      '"Segoe UI Emoji"',
+      '"Apple Color Emoji"',
+      '"Roboto"',
+    ].join(','),
   },
 });
 
