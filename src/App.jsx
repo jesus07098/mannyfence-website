@@ -155,7 +155,7 @@ function App() {
       {/* 1st Section: Main Cover */}
       <Box className={classes.hero}>
         <Grid container spacing={2}>
-          <Grid item xs={10} md={12}>
+          <Grid item xs={11} md={12}>
             <Typography className={classes.titleHero}>
               Protecting your place
             </Typography>
