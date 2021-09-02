@@ -38,7 +38,6 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '100px',
     textAlign: 'center',
     fontWeight: 'bold',
- 
   },
   buttonHero: {
     backgroundColor: '#EBBF5F00',
@@ -48,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '40px',
     borderRadius: 20,
     '&:hover': {
-      backgroundColor: '#B39A68',
+      backgroundColor: '#B69461',
     },
   },
   descripHero: {
@@ -58,7 +57,6 @@ const useStyles = makeStyles((theme) => ({
   },
   backgroundHero: {
     background: '#e2b877',
-
   },
   cardPictures: {
     height: 750,
@@ -72,6 +70,60 @@ const useStyles = makeStyles((theme) => ({
   dialogContent: {
     width: '1800px',
   },
+  phraseSection:{
+    backgroundImage: 'url(images/prhaseSection.png)',
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    height: 450,
+    position: 'relative',
+    display: 'flex',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    color: '#fff',
+    fontSize: '8rem',
+  },
+  titlePrhaseSection: {
+    fontSize: '50px',
+    textAlign: 'left',
+    fontWeight: 'bold',
+  },
+  descripPrhaseSection:{
+    fontSize: '20px',
+    fontWeight: 'bold',
+    fontStyle: 'italic',
+  },
+  testimonial: {
+    backgroundColor: "#fff",
+    height: 450,
+    position: 'relative',
+    display: 'flex',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    color: '#fff',
+    fontSize: '8rem',
+  },
+  quotationMark:{
+    fontSize: '150px',
+    color: '#F4D3A1',
+    fontweight: 800,
+    bordercolor: '#000'
+  },
+  testimonialParagraph:{
+    fontSize: '20px',
+    fontStyle: 'italic',
+    color: '#8C8C8C',
+    textAlign: 'justify',
+    backgroundColor: '#F4F4F4'
+  },
+  bgTestimonial:{
+    display: 'flex',
+    backgroundColor:' #F4F4F4',
+    height: 150,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '20px'  
+  }
 }));
 
 //Contact us scroll To Bottom
@@ -86,7 +138,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 function App() {
-  let url = "";
+  let url = '';
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -99,12 +151,11 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-     
       <Navbar />
       {/* 1st Section: Main Cover */}
       <Box className={classes.hero}>
         <Grid container spacing={2}>
-          <Grid item xs={12}>
+          <Grid item xs={10} md={12}>
             <Typography className={classes.titleHero}>
               Protecting your place
             </Typography>
@@ -120,7 +171,6 @@ function App() {
                 Contact Us
               </Button>
             </Box>
-      
           </Grid>
         </Grid>
       </Box>
@@ -138,13 +188,24 @@ function App() {
                     alt="Wood Fence"
                     height="450"
                     image="images/woodfence.jpeg"
-                   
                     title="Wood Fence"
                   />
                   <CardContent>
-                    <Box fontWeight={800} fontSize={24} fontFamily="Noto Sans JP">
+                    <Box
+                      fontWeight={800}
+                      fontSize={20}
+                      fontFamily="Noto Sans JP"
+                      mb={1}
+                    >
                       Wood Fence
                     </Box>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                    >
+                      Enhance the beauty of your property with cedar fencing...
+                    </Typography>
                   </CardContent>
                 </CardActionArea>
               </Card>
@@ -161,11 +222,7 @@ function App() {
             >
               <DialogContent>
                 <Box>
-                  <img
-                    src={url}
-                    width="850px"
-                    alt="ironFenceImage"
-                  />
+                  <img src={url} width="850px" alt="ironFenceImage" />
                 </Box>
               </DialogContent>
               <DialogActions></DialogActions>
@@ -178,24 +235,68 @@ function App() {
                     component="img"
                     alt="Wood Fence"
                     height="450"
-                    image="images/ironfence.jpeg" 
+                    image="images/ironfence.jpeg"
                     title="Iron Fence"
                   />
                   <CardContent>
-                    <Box fontWeight={800} fontSize={24} fontFamily="Noto Sans JP">
+                    <Box
+                      fontWeight={800}
+                      fontSize={20}
+                      fontFamily="Noto Sans JP"
+                      mb={1}
+                    >
                       Aluminum and Iron Fence
                     </Box>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                    >
+                      The classic and timeless beauty of metal fences traditionally...
+                    </Typography>
                   </CardContent>
                 </CardActionArea>
               </Card>
             </Grid>
           </Grid>
         </Box>
+
+        
       </Container>
+      <Box className={classes.phraseSection} >
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <Container>
+            <Typography className={classes.titlePrhaseSection}>
+            About fences, whatever you want!
+            </Typography>
+            <Typography className={classes.descripPrhaseSection}>
+            We take care of the installation and repair of fences for homes and establishments with our quality equipment.
+            </Typography>
+            </Container>
+          </Grid>
+        </Grid>
+      </Box>
+
+      <Box className={classes.testimonial} >
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <Container>
+            <Box className={classes.bgTestimonial}> 
+            <Typography className={classes.quotationMark}>
+            “
+            </Typography>
+            <Typography className={classes.testimonialParagraph}>
+            I am extremely grateful for the service. My home is safer thanks to the wooden fence installed by Manny's Fence and they also built a house for my dog. - Joseph Smith
+            </Typography>
+            </Box> 
+            </Container>
+          </Grid>
+        </Grid>
+      </Box>
 
       {/*Footer */}
       <Footer />
- 
     </ThemeProvider>
   );
 }
