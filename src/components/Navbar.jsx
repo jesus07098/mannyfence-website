@@ -8,6 +8,10 @@ import {
   Box,
   Container
 } from '@material-ui/core';
+import {
+  BrowserRouter as Router,
+  Link
+} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   offset: theme.mixins.toolbar,
@@ -30,12 +34,13 @@ const useStyles = makeStyles((theme) => ({
 const Navbar = () => {
   const classes = useStyles();
   return (
-    <>
-      <AppBar position="absolute" color="primary">
+    <div>
+      <AppBar position="fixed" color="primary">
         <Toolbar>
          <Container maxWidth="xl">
           <Grid container>
           <Grid item xs={12} md={3}>
+          <Link to="/">
             <img
               src="images/logo.png"
               height="90px"
@@ -43,29 +48,36 @@ const Navbar = () => {
               alt="logo_empresa"
               className={classes.imgLogo}
             />
+            </Link>
             </Grid>
             <Grid item xs={12} md={6}>
-              <Box display="flex" justifyContent="space-evenly" alignItems="center"  height="90px">
+              <Box display="flex" justifyContent="space-evenly" alignItems="center"  height="90px" flexWrap="nowrap">
+               
+              <Link to="/" style={{ textDecoration: 'none' }}>
+              <Button color="inherit" className={classes.menuOptions}>
+                Home
+              </Button>
+                </Link> 
+               
+                <Link to="/gallery" style={{ textDecoration: 'none' }}>
               <Button color="inherit" className={classes.menuOptions}>
                 Gallery
               </Button>
+                </Link> 
               <Button color="inherit" className={classes.menuOptions}>
                 Contact
-              </Button>
-              <Button color="inherit" className={classes.menuOptions}>
-                Login
-              </Button>
-              <Button color="inherit" className={classes.menuOptions}>
-                Login
               </Button>
               </Box>
             </Grid>
           </Grid>
           </Container>
+
+    
+
         </Toolbar>
       </AppBar>
       <div className={classes.offset}></div>
-    </>
+      </div>
   );
 };
 
