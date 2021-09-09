@@ -139,7 +139,7 @@ function HomeScreen() {
       <Navbar />
       {/* 1st Section: Main Cover */}
       <Box className={classes.hero}>
-        <Grid container spacing={2}>
+        <Grid  spacing={1}>
           <Grid item xs={11} md={12}>
             <Typography className={classes.titleHero}>
               Protecting your place

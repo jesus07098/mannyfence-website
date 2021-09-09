@@ -9,7 +9,6 @@ import {
   Container
 } from '@material-ui/core';
 import {
-  BrowserRouter as Router,
   Link
 } from "react-router-dom";
 

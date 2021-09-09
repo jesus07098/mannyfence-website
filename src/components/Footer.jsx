@@ -5,7 +5,7 @@ import { Phone, Mail, LocationOn } from '@material-ui/icons';
 const useStyles = makeStyles(theme => ({
     footer: {
         backgroundColor: '#000',
-        height: '450px',
+        height: '445px',
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
